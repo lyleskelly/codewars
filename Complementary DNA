@@ -1,0 +1,36 @@
+using System;
+
+public class DnaStrand 
+    {
+        public static string MakeComplement(string dna)
+        {
+            //Your code
+            var compString = "";
+            
+            for (int i = 0; i < dna.Length; i++)
+            {
+              if(dna[i].ToString() == "A")
+              {
+                //T
+                compString = compString + "T";
+              }
+              else if(dna[i].ToString() == "T")
+              {
+                //A
+                compString = compString + "A";
+              }
+              else if(dna[i].ToString() == "G")
+              {
+                //C
+                compString = compString + "C";
+              }
+              else if(dna[i].ToString() == "C")
+              {
+                //G
+                compString = compString + "G";
+              }
+            }
+            
+            return compString;
+        }
+    }
