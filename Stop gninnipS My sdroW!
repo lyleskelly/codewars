@@ -1,0 +1,39 @@
+using System.Collections.Generic;
+using System.Linq;
+using System;
+
+public class Kata
+{
+  public static string SpinWords(string sentence)
+  {
+    var spunSentence = "";
+    
+    //split words
+    var SplitSentance = sentence.Split(" ");
+    
+    foreach (var word in SplitSentance)
+    {
+      var reversedWord =  "";
+      if(word.Length >= 5)
+        {
+        reversedWord = ReverseString(word);
+        spunSentence = spunSentence + reversedWord + " ";
+      }
+      else
+        {
+        spunSentence = spunSentence + word + " ";
+      }      
+    }
+    
+    return spunSentence.TrimEnd();
+  }
+  
+  static string ReverseString(string s)
+    {
+        // Convert to char array, then call Array.Reverse.
+        // ... Finally use string constructor on array.
+        char[] array = s.ToCharArray();
+        Array.Reverse(array);
+        return new string(array);
+    }
+}
